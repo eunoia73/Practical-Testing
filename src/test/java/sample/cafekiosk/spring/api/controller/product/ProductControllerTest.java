@@ -136,6 +136,7 @@ class ProductControllerTest {
         //given
         ProductCreateRequest request = ProductCreateRequest.builder()
                 .type(ProductType.HANDMADE)
+                .name("아메리카노")
                 .sellingStatus(ProductSellingStatus.SELLING)
                 .price(0)
                 .build();
