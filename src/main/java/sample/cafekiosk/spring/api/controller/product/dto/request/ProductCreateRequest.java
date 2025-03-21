@@ -1,5 +1,6 @@
 package sample.cafekiosk.spring.api.controller.product.dto.request;
 
+import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
@@ -14,16 +15,16 @@ import sample.cafekiosk.spring.domain.product.ProductType;
 @NoArgsConstructor
 public class ProductCreateRequest {
 
-    @NotNull
+    @NotNull(message = "상품 타입은 필수입니다.")
     private ProductType type;
 
-    @NotNull
+    @NotNull(message = "상품 판매상태는 필수입니다.")
     private ProductSellingStatus sellingStatus;
 
-    @NotBlank
+    @NotBlank(message = "상품 이름은 필수입니다.")
     private String name;
 
-    @Positive
+    @Positive(message = "상품 가격은 양수여야 합니다.")
     private int price;
 
     @Builder
